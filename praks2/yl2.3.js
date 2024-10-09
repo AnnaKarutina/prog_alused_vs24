@@ -2,7 +2,7 @@ import rl from "./util/input.js";
 
 rl.question('Sisestage enda vanus: ', vanus => {
     rl.question('Sisetage enda sugu (M, m või N, n): ', sugu => {
-        if (sugu != 'M' || sugu != 'm' || sugu != 'N'|| sugu != 'n'){
+        if (sugu != 'M' && sugu != 'm' && sugu != 'N'&& sugu != 'n'){
             console.log('Sugu sümbol on vale.')
             rl.close()
             return
