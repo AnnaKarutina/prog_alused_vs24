@@ -1,17 +1,16 @@
 import rl from "./util/input.js";
 
-rl.question('Sisesta mitu korda äratada: ', mituKorda => {
-    for(let kord = 1; kord <= mituKorda; kord++){
-        console.log('Tõuse ja sära!')
-    } 
+let aratus = true;
+let aratuseKordamine = 0 
 
-    console.log('---------------------')
+rl.on('line', () => { 
+    aratus = false; 
+    console.log(`Aratuskell helises ${aratuseKordamine} korda.`)
+    rl.close();
+}); 
 
-    let kord = 1
-    while(kord <= mituKorda){
-        console.log('Tõuse ja sära!')
-        kord++
-    } 
-    
-    rl.close()
-})
+while (aratus) { 
+    console.log('Touse ja sara!'); 
+    aratuseKordamine++
+    await new Promise(resolve => setTimeout(resolve, 1000)); 
+}
